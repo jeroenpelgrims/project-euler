@@ -22,10 +22,10 @@ fn fibonacci() -> Fibonacci {
 
 fn main() {
   let fib_max = 4_000_000;
-  let result: u64 = fibonacci()
+  let result = fibonacci()
     .take_while(|x| x <= &fib_max)
     .filter(|x| x % 2 == 0)
-    .fold(0u64, |result, next| result + next);
+    .fold(0, |result, next| result + next);
 
   println!("{}", result);
 }
