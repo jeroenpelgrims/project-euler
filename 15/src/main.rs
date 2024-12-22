@@ -2,17 +2,10 @@ use memoize::memoize;
 
 #[memoize]
 fn count_paths(side: usize, x: usize, y: usize) -> usize {
-    if x == side && y == side {
-        1
-    } else {
-        let mut sum = 0;
-        if x < side {
-            sum = sum + count_paths(side, x + 1, y);
-        }
-        if y < side {
-            sum = sum + count_paths(side, x, y + 1);
-        }
-        sum
+    match (x, y) {
+        (x, y) if x > side || y > side => 0,
+        (x, y) if x == side && y == side => 1,
+        (x, y) => count_paths(side, x + 1, y) + count_paths(side, x, y + 1),
     }
 }
 
