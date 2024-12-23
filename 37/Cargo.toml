@@ -1,0 +1,10 @@
+[package]
+name = "euler37"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cargo-watch = "8.5.3"
+itertools = "0.13.0"
+memoize = "0.4.2"
+primal = "0.3.3"
